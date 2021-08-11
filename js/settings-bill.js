@@ -19,7 +19,7 @@ function updateSettings() {
   refFactor.setCritical(criticalLevelSettings.value);
   refFactor.setWarning(warningLevelSettings.value);
 }
-totalAmountBtn.addEventListener('click', domFunction);
+//totalAmountBtn.addEventListener('click', domFunction);
 
 function domFunction() {
   var billSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
