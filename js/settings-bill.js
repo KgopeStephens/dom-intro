@@ -19,10 +19,11 @@ function updateSettings() {
   refFactor.setCritical(criticalLevelSettings.value);
   refFactor.setWarning(warningLevelSettings.value);
 }
+totalAmountBtn.addEventListener('click', domFunction);
 
 function domFunction() {
   var billSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-
+  
   if (billSettings) {
 
     refFactor.billSettings(billSettings.value);
@@ -50,7 +51,7 @@ function domFunction() {
 }
 
 updateSetting.addEventListener('click', updateSettings);
-totalAmountBtn.addEventListener('click', domFunction);
+
 
 function SettingsWithBill() {
     var callB = 0;
