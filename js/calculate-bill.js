@@ -4,6 +4,7 @@ const calculateBttmElement = document.querySelector(".calculateBttn");
 const billTotalElement = document.querySelector(".billTotal");
 //get a reference to the billString
 const billStringElement = document.querySelector(".billString");
+calculateBtn.addEventListener('click', calculateBtnClicked);
 function calculateBtnClicked(){
     var billString = billStringElement.value;
     var billItems = billString.split(",");
@@ -22,4 +23,4 @@ function calculateBtnClicked(){
     billTotalElement.innerHTML = roundedBillTotal;
 }
 
-calculateBtn.addEventListener('click', calculateBtnClicked);
+
