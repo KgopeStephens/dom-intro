@@ -1,9 +1,9 @@
 
-const billTypeField = document.querySelector(".billTypeText");
-const addToBillElement = document.querySelector(".addToBillBtn");
-const callTotalOneElement = document.querySelector(".callTotalOne");
-const smsTotalOneElement = document.querySelector(".smsTotalOne");
-const totalOneElement = document.querySelector(".totalOne");
+const billTypeText = document.querySelector(".billTypeText");
+const addToBillBtn = document.querySelector(".addToBillBtn");
+const callTotalOne = document.querySelector(".callTotalOne");
+const smsTotalOne = document.querySelector(".smsTotalOne");
+const totalOne = document.querySelector(".totalOne");
 
 var refFactory = Factory();
 
