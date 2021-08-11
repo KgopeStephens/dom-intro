@@ -1,5 +1,5 @@
 
-const billTypeElement = document.querySelector(".billTypeText");
+const billTypeField = document.querySelector(".billTypeText");
 const addToBillElement = document.querySelector(".addToBillBtn");
 const callTotalOneElement = document.querySelector(".callTotalOne");
 const smsTotalOneElement = document.querySelector(".smsTotalOne");
@@ -29,11 +29,11 @@ function totalPhoneBill(billString){
    }
 
 function textBillTotalClicked(){
-    var billTypeEntered = billTypeText.value.trim();
-    if (billTypeEntered === "bill"){
+    var billTypeText = billTypeField.value.trim();
+    if (billTypeText === "call"){
         callsTotal += 2.75
     }
-    else if (billTypeEntered === "sms"){
+    else if (billTypeText === "sms"){
         smsTotal += 0.75;
     }
     callsTotalElem.innerHTML = callsTotal.toFixed(2);
