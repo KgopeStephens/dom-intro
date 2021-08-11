@@ -1,4 +1,4 @@
-settings-bill.factory.js
+
 var billItemTypeWithSettings = document.querySelector(".billItemTypeWithSettings");
 
 var callCostSettings = document.querySelector(".callCostSetting");
