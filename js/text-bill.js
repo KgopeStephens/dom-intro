@@ -10,7 +10,7 @@ const textBillAddBtn = document.querySelector(".textBillAddBtn");
 var callsTotal = 0;
 var smsTotal = 0;
 //add an event listener for when the add button is pressed
-textBillAddBtn.addEventListener('click', textBillAddBtnClicked);
+textBillAddBtn.addEventListener('press', textBillAddBtnPressed);
 //in the event listener check if the value in the bill type textbox is 'sms' or 'call'
 function textBillTotal(){
     var billTypeEntered = billTypeText.value.trim();
