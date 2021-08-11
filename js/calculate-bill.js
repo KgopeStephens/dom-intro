@@ -1,5 +1,5 @@
 
-const calculateBttmElement = document.querySelector(".calculateBtn");
+const calculateBtn = document.querySelector(".calculateBtn");
 const billTotalElement = document.querySelector(".billTotal");
 const billStringField= document.querySelector(".billString");
 const billTotalSpanElement= document.querySelector(".total");
