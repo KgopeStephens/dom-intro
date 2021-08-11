@@ -51,6 +51,7 @@ function domFunction() {
 
 updateSetting.addEventListener('click', updateSettings);
 totalAmountBtn.addEventListener('click', domFunction);
+
 function SettingsWithBill() {
     var callB = 0;
     var smsB = 0;
@@ -75,7 +76,6 @@ function SettingsWithBill() {
       }
     }
   
-    //returns
     function getCall() {
       return callB;
     }
