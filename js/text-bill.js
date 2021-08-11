@@ -5,7 +5,7 @@ const callTotalOneElement = document.querySelector(".callTotalOne");
 const smsTotalOneElement = document.querySelector(".smsTotalOne");
 const totalOneElement = document.querySelector(".totalOne");
 //get a reference to the add button
-const textBillAddBtnElement = document.querySelector(".textBillAddBtn");
+const textBillAddBtn = document.querySelector(".textBillAddBtn");
 //create a variable that will keep track of the total bill
 var callsTotal = 0;
 var smsTotal = 0;
