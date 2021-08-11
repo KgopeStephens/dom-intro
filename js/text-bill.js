@@ -27,8 +27,8 @@ function totalPhoneBill(billString){
     var roundedBillTotal = billTotal.toFixed(2);
     return roundedBillTotal;
    }
-   
-function textBillTotal(){
+
+function textBillTotalClicked(){
     var billTypeEntered = billTypeText.value.trim();
     if (billTypeEntered === "bill"){
         callsTotal += 2.75
@@ -52,5 +52,5 @@ function textBillTotal(){
     }
 }
 
-textTotalAddBtn.addEventListener('click', textBillTotal);
+textTotalAddBtn.addEventListener('click', textBillTotalClicked);
 
