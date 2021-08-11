@@ -10,6 +10,24 @@ var smsTotal = 0;
 const textTotalAddBtn = document.querySelector(".textBillAddBtn");
 //textBillAddBtn.addEventListener('press', textBillTotal)
 
+function totalPhoneBill(billString){
+    var billItems = billString.split(",");
+   
+    var billTotal = 0;
+    
+    for (var i=0;i<billItems.length;i++){
+        var billItem = billItems[i].trim();
+        if (billItem === "call"){
+            billTotal += 2.75;
+        }
+        else if (billItem === "sms"){
+            billTotal += 0.75;
+        }
+    }
+    var roundedBillTotal = billTotal.toFixed(2);
+    return roundedBillTotal;
+   }
+   
 function textBillTotal(){
     var billTypeEntered = billTypeText.value.trim();
     if (billTypeEntered === "bill"){
@@ -22,6 +40,9 @@ function textBillTotal(){
     smsTotalElem.innerHTML = smsTotal.toFixed(2);
     var totalCost = callsTotal + smsTotal;
     totalCostElem.innerHTML = totalCost.toFixed(2);
+
+    totalCostElem.classList.remove("danger");
+    totalCostElem.classList.remove("warning");
     if (totalCost >= 50){
 
         totalCostElem.classList.add("danger");
