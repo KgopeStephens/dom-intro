@@ -8,7 +8,7 @@ const totalOneElement = document.querySelector(".totalOne");
 var callsTotal = 0;
 var smsTotal = 0;
 const textBillAddBtn = document.querySelector(".textBillAddBtn");
-textBillAddBtn.addEventListener('press', textBillTotal)
+//textBillAddBtn.addEventListener('press', textBillTotal)
 
 function textBillTotal(){
     var billTypeEntered = billTypeText.value.trim();
