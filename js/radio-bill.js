@@ -1,12 +1,71 @@
-// get a reference to the sms or call radio buttons
+var billItemType = document.querySelector(".billItemType");
+var radioBillAddBtn = document.querySelector(".radioBillAddBtn");
+var callTotalTwo = document.querySelector(".callTotalTwo");
+var smsTotalTwo = document.querySelector(".smsTotalTwo");
+var totalTwo = document.querySelector(".totalTwo");
+var refFactories = Factories();
 
-//get a reference to the add button
+radioBillAddBtn.addEventListener('click', function() {
+  Factories();
+  radioTotal();
+});
 
-//create a variable that will keep track of the total bill
+function radioTotal() {
+  var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
+  if (checkedRadioBtn) {
+    var billItemType = checkedRadioBtn.value;
+  }
+  refFactories.billT(billItemType);
 
-//add an event listener for when the add button is pressed
+  callTotalTwo.innerHTML = refFactories.allC().toFixed(2);
+  smsTotalTwo.innerHTML = refFactories.allS().toFixed(2);
+  totalTwo.innerHTML = refFactories.grandT().toFixed(2);
 
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
+  if (refFactories.grandT() >= 30) {
+    totalTwo.classList.add("warning");
+  }
+  if (refFactories.grandT() >= 50) {
+    totalTwo.classList.add("danger");
+  }
+  if (refFactories.grandT() < 20) {
+    totalTwo.classList.remove("warning");
+  } else if (refFactories.grandT() < 50) {
+    totalTwo.classList.remove("danger");
+  }
+
+}
+function Factories() {
+    var callA = 0;
+    var smsA = 0;
+    var totalA = 0;
+  
+    function radioBillTotal(totalD) {
+      if (totalD === 'call') {
+        callA += 2.75;
+      } else if (totalD === 'sms') {
+        smsA += 0.75;
+      }
+  
+      totalA = callA + smsA;
+    }
+  
+    function getCalls() {
+      return callA;
+    }
+  
+    function getSmss() {
+      return smsA;
+    }
+  
+    function getTotalA() {
+      return totalA;
+    }
+  
+    return {
+      billT: radioBillTotal,
+      allC: getCalls,
+      allS: getSmss,
+      grandT: getTotalA
+    }
+  
+  }
