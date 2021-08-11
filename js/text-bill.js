@@ -5,11 +5,9 @@ const callTotalOneElement = document.querySelector(".callTotalOne");
 const smsTotalOneElement = document.querySelector(".smsTotalOne");
 const totalOneElement = document.querySelector(".totalOne");
 
-const textBillAddBtn = document.querySelector(".textBillAddBtn");
-
 var callsTotal = 0;
 var smsTotal = 0;
-
+const textBillAddBtn = document.querySelector(".textBillAddBtn");
 textBillAddBtn.addEventListener('press', textBillAddBtnPressed);
 
 function textBillTotal(){
@@ -34,4 +32,4 @@ function textBillTotal(){
 }
 
 textTotalAddBtn.addEventListener('click', textBillTotal);
-s
+
