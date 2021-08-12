@@ -43,27 +43,29 @@ updateSettings.addEventListener('click', function(){
     } 
  
 });
-
 radioBillAddButton.addEventListener('click', function(){
+    alert('click')
+})
+//radioBillAddButton.addEventListener('click', function(){
          
-        var billItemTypeWithSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-        var billItemType = billItemTypeWithSettings.value
-        if (billItemType === "call"){
-            callsTotalSet += 2.75
-        }
-        else if (billItemType === "sms"){
-            smsTotalSet += 0.75;
-        }  
-        callTotalSettingsElem.innerHTML = callsTotalSet.toFixed(2);
-        smsTotalSettingElem.innerHTML = smsTotalSet.toFixed(2);
-        totalCost = callsTotalSet + smsTotalSet;
-        totalSettingsElem.innerHTML = totalCost.toFixed(2);
+        //var billItemTypeWithSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+       // var billItemType = billItemTypeWithSettings.value
+       // if (billItemType === "call"){
+           // callsTotalSet += 2.75
+       // }
+        //else if (billItemType === "sms"){
+          //  smsTotalSet += 0.75;
+       // }  
+       // callTotalSettingsElem.innerHTML = callsTotalSet.toFixed(2);
+       // smsTotalSettingElem.innerHTML = smsTotalSet.toFixed(2);
+       // totalCost = callsTotalSet + smsTotalSet;
+       // totalSettingsElem.innerHTML = totalCost.toFixed(2);
         
-        if (totalCost >= 50){
-            totalSettingsElem.classList.add("danger");
-        }
-        else if (totalCost >= 30){
-            totalSettingsElem.classList.add("warning");
-        }
+       // if (totalCost >= 50){
+            //totalSettingsElem.classList.add("danger");
+       // }
+       // else if (totalCost >= 30){
+           // totalSettingsElem.classList.add("warning");
+       // }
     
-});
+//});
