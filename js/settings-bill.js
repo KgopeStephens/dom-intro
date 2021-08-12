@@ -44,6 +44,7 @@ updateSettings.addEventListener('click', function(){
  
 });
 radioBillAddButton.addEventListener('click', function(){
+    
     var billItemTypeWithSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
         var billItemType = billItemTypeWithSettings.value
         if (billItemType === "call"){
