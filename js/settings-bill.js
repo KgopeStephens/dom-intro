@@ -9,15 +9,16 @@ var criticalLevelSettings = document.querySelector(".criticalLevelSetting");
 var callTotalSetting = document.querySelector(".callTotalSettings");
 var smsTotalSetting = document.querySelector(".smsTotalSettings");
 var totalSettings = document.querySelector(".totalSettings");
+
 var totalAmountBtn = document.querySelector(".totalAmountBtn");
 var updateSetting = document.querySelector(".updateSettings");
 
 //updates
 function updateSettings() {
-  refFactor.setCostCall(callCostSettings.value);
-  refFactor.setCostSms(smsCostSettings.value);
-  refFactor.setCritical(criticalLevelSettings.value);
-  refFactor.setWarning(warningLevelSettings.value);
+ // refFactor.setCostCall(callCostSettings.value);
+ // refFactor.setCostSms(smsCostSettings.value);
+ // refFactor.setCritical(criticalLevelSettings.value);
+  //refFactor.setWarning(warningLevelSettings.value);
 }
 
 function SettingsWithBill() {
