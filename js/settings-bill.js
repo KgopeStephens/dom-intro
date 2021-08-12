@@ -19,39 +19,6 @@ function updateSettings() {
   refFactor.setCritical(criticalLevelSettings.value);
   refFactor.setWarning(warningLevelSettings.value);
 }
-//totalAmountBtn.addEventListener('click', domFunction);
-
-function domFunction() {
-  var billSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-  
-  if (billSettings) {
-
-    refFactor.billSettings(billSettings.value);
-
-    callTotalSetting.innerHTML = refFactor.getCall().toFixed(2);
-    smsTotalSetting.innerHTML = refFactor.getSms().toFixed(2);
-    var totalBill = refFactor.totalBills().toFixed(2);
-    totalSettings.innerHTML = totalBill;
-
-
-    if (totalBill < refFactor.getWarning()) {
-      totalSettings.classList.remove("warning");
-      totalSettings.classList.remove("danger");
-
-    }
-    if (totalBill >= refFactor.getWarning() && totalBill < refFactor.getCritical()) {
-      totalSettings.classList.remove("danger");
-      totalSettings.classList.add("warning");
-    }
-    if (totalBill >= refFactor.getCritical()) {
-      totalSettings.classList.remove("warning");
-      totalSettings.classList.add("danger");
-    }
-  }
-}
-
-updateSetting.addEventListener('click', updateSettings);
-
 
 function SettingsWithBill() {
     var callB = 0;
@@ -127,3 +94,37 @@ function SettingsWithBill() {
     }
   }
   var refFactor = SettingsWithBill();
+
+
+function domFunction() {
+  var billSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+  
+  if (billSettings) {
+
+    refFactor.billSettings(billSettings.value);
+
+    callTotalSetting.innerHTML = refFactor.getCall().toFixed(2);
+    smsTotalSetting.innerHTML = refFactor.getSms().toFixed(2);
+    var totalBill = refFactor.totalBills().toFixed(2);
+    totalSettings.innerHTML = totalBill;
+
+
+    if (totalBill < refFactor.getWarning()) {
+      totalSettings.classList.remove("warning");
+      totalSettings.classList.remove("danger");
+
+    }
+    if (totalBill >= refFactor.getWarning() && totalBill < refFactor.getCritical()) {
+      totalSettings.classList.remove("danger");
+      totalSettings.classList.add("warning");
+    }
+    if (totalBill >= refFactor.getCritical()) {
+      totalSettings.classList.remove("warning");
+      totalSettings.classList.add("danger");
+    }
+  }
+}
+
+updateSetting.addEventListener('click', updateSettings);
+totalAmountBtn.addEventListener('click', domFunction);
+
