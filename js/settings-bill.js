@@ -1,16 +1,14 @@
 
-var radioBillAddButton = document.querySelector('.radioBillAddButton');
-var updateSettings = document.querySelector('.updateSettings');
+const radioBillAddButton = document.querySelector('.radioBillAddButton');
+const updateSettings = document.querySelector('.updateSettings');
 
-var callCostSettingElem = document.querySelector('.callCostSetting');
-var smsCostSettingElem = document.querySelector('.smsCostSetting');
-var warningLevelSettingElem = document.querySelector('.warningLevelSetting');
-var criticalLevelSettingElem = document.querySelector('.criticalLevelSetting');
-
-
-var callTotalSettingsElem = document.querySelector('.callTotalSettings');
-var smsTotalSettingElem = document.querySelector('.smsTotalSettings');
-var totalSettingsElem = document.querySelector('.totalSettings');
+const callCostSettingElem = document.querySelector('.callCostSetting');
+const smsCostSettingElem = document.querySelector('.smsCostSetting');
+const warningLevelSettingElem = document.querySelector('.warningLevelSetting');
+const criticalLevelSettingElem = document.querySelector('.criticalLevelSetting');
+const callTotalSettingsElem = document.querySelector('.callTotalSettings');
+const smsTotalSettingElem = document.querySelector('.smsTotalSettings');
+const totalSettingsElem = document.querySelector('.totalSettings');
 
 var callsTotalSet = 0;
 var smsTotalSet = 0;
@@ -46,30 +44,22 @@ updateSettings.addEventListener('click', function(){
  
 });
 
-
 radioBillAddButton.addEventListener('click', function(){
          
-
-    var billItemTypeWithSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+        var billItemTypeWithSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
         var billItemType = billItemTypeWithSettings.value
-        // billItemType will be 'call' or 'sms'
-      
         if (billItemType === "call"){
             callsTotalSet += 2.75
         }
         else if (billItemType === "sms"){
             smsTotalSet += 0.75;
-        }
-        
-        //update the totals that is displayed on the screen.
+        }  
         callTotalSettingsElem.innerHTML = callsTotalSet.toFixed(2);
         smsTotalSettingElem.innerHTML = smsTotalSet.toFixed(2);
         totalCost = callsTotalSet + smsTotalSet;
         totalSettingsElem.innerHTML = totalCost.toFixed(2);
         
-        
         if (totalCost >= 50){
-            // adding the danger class will make the text red
             totalSettingsElem.classList.add("danger");
         }
         else if (totalCost >= 30){
